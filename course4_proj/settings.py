@@ -160,8 +160,11 @@ class Dev(Configuration):
         },
     }
 
-    #OMDB_KEY = values.SecretValue()
-    OMDB_KEY = 'e5595c83'
+    OMDB_KEY = values.SecretValue()
+    #OMDB_KEY = ''
 
     CELERY_RESULT_BACKEND = "django-db"
     CELERY_BROKER_URL = "redis://localhost:6379/0"
+
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    ADMINS = [("Ben", "ben@example.com")]
